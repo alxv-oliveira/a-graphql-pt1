@@ -2,6 +2,7 @@ type Cliente {
     id: ID!
     nome: String!
     cpf: String!
+    pets: [Pet!]
 }
 
 type Pet {
@@ -18,6 +19,8 @@ type Mutation {
     deletarCliente(id: ID!): ID!
 
     adicionarPet(nome: String!, donoId: Int!, tipo: String, observacoes: String): Pet!
+    atualizarPet(id: ID!, nome: String!, donoId: Int!, tipo: String, observacoes: String): Pet!
+    deletarPet(id: ID!): ID!
 }
 
 type Query {
@@ -26,4 +29,5 @@ type Query {
     cliente(id: ID!): Cliente!
 
     pets:[Pet!]!
+    pet(id: ID!): Pet!
 }

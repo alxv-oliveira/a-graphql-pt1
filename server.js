@@ -22,6 +22,7 @@ const resolvers = {
     cliente: (root, { id }) => Clientes.buscaPorId(id),
 
     pets: () => Pets.lista(),
+    pet: (root, { id }) => Pets.buscaPorId(id),
   },
   Mutation: {
     adicionarCliente: (root, params) => Clientes.adiciona(params),
@@ -29,7 +30,8 @@ const resolvers = {
     deletarCliente: (root, { id }) => Clientes.deleta(id),
 
     adicionarPet: (root, params) => Pets.adiciona(params),
-
+    atualizarPet: (root, params) => Pets.atualiza(params),
+    deletarPet: (root, { id }) => Pets.deleta(id),
   }
 }
 
